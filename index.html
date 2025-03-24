@@ -82,21 +82,32 @@
 
   <script>
     const maxToasters = 10;
-    let toasterCount = 0;
+let toasterCount = 0;
 
-    document.getElementById("addToaster").addEventListener("click", () => {
-      if (toasterCount >= maxToasters) return;
+document.getElementById("addToaster").addEventListener("click", () => {
+  if (toasterCount >= maxToasters) return;
 
-      const toaster = document.createElement("img");
-      toaster.src = "https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif"; // Replace with your preferred flying toaster gif
-      toaster.classList.add("toaster");
+  const toaster = document.createElement("img");
+  toaster.src = "https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif"; // Replace with your gif
+  toaster.classList.add("toaster");
 
-      const randomTop = Math.random() * (window.innerHeight - 100);
-      toaster.style.top = `${randomTop}px`;
+  // Random vertical start position
+  const randomTop = Math.random() * (window.innerHeight - 100);
+  toaster.style.top = `${randomTop}px`;
 
-      document.body.appendChild(toaster);
-      toasterCount++;
-    });
+  // Random diagonal shift
+  const shift = (Math.random() > 0.5 ? 1 : -1) * (Math.random() * window.innerHeight);
+  toaster.style.setProperty('--y-shift', `${shift}px`);
+
+  // Remove toaster when animation ends
+  toaster.addEventListener("animationend", () => {
+    toaster.remove();
+    toasterCount--;
+  });
+
+  document.body.appendChild(toaster);
+  toasterCount++;
+});
   </script>
 </body>
 </html>
