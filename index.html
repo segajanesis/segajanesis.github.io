@@ -86,6 +86,9 @@
  <div class="window" id="draggable-box" class="centered-box" style="width: 320px">
   <div class="title-bar">
     <div class="title-bar-text">From the Desk of Jane Kaiser</div>
+  <div class="title-bar-controls">
+    <button aria-label="Thanks for stopping by!" class="help"></button>
+  </div>
   </div>
   <div class="window-body">
     <p>Hi, I'm Jane! 
@@ -216,6 +219,7 @@
   document.addEventListener('mouseup', () => {
     isDragging = false;
     box.style.cursor = 'grab';
+    
   });
 
     // this part listens for the user to detect if they are grabbing it with their mouse down and moving it
@@ -227,6 +231,7 @@
       box.style.left = `${e.clientX - offsetX}px`;
       box.style.top = `${e.clientY - offsetY}px`;
     }
+    
   });
 
     // this part is the end of the script, thank you for coming to my ted talk 
