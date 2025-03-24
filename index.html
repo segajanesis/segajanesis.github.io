@@ -61,11 +61,13 @@
 </head>
   
 <body>
- <div class="window" class="centered-box" style="width: 320px">
+ <div class="window" id="draggable-box" class="centered-box" style="width: 320px">
   <div class="title-bar">
     <div class="title-bar-text">From the Desk of Jane Kaiser</div>
   </div>
   <div class="window-body">
+    <p>Hi, I'm Jane! 
+<br>
 <p> View my full resume on <a href="https://www.linkedin.com/in/kaiserjane">LinkedIn</a></p>
     <br>
     Excited to join your team and help with: 
@@ -87,33 +89,95 @@
     <br>
 
   <script>
-    const maxToasters = 10;
-let toasterCount = 0;
 
-document.getElementById("addToaster").addEventListener("click", () => {
+  // this sets how many toasters can be on the screen as well as how many to start with 
+    
+  const maxToasters = 20;
+  let toasterCount = 0;
+
+  document.getElementById("addToaster").addEventListener("click", () => {
+  
   if (toasterCount >= maxToasters) return;
+
+  // this is generating the toaster 
 
   const toaster = document.createElement("img");
   toaster.src = "https://media0.giphy.com/media/1jkYrR51WFBCkHp1xZ/giphy.gif"; 
   toaster.classList.add("toaster");
 
-  // Random vertical start position
+  // this gives the toasters a random vertical start position
+    
   const randomTop = Math.random() * (window.innerHeight - 100);
   toaster.style.top = `${randomTop}px`;
 
-  // Random diagonal shift
+  // this gives the toasters a diag path 
+    
   const shift = (Math.random() > 0.5 ? 1 : -1) * (Math.random() * window.innerHeight);
   toaster.style.setProperty('--y-shift', `${shift}px`);
 
-  // Remove toaster when animation ends
+  // this removes a toaster once its animation cycle has ended
+    
   toaster.addEventListener("animationend", () => {
     toaster.remove();
     toasterCount--;
+    
   });
 
+  // this adds more toasters 
+    
   document.body.appendChild(toaster);
   toasterCount++;
-});
+    
+  });
+
+  // this part of the script lets the main box become a draggable object 
+     
+  const box = document.getElementById('draggable-box');
+
+  // this part is recording where the mouse is to prevent a janky jump 
+
+  let isDragging = false
+  let offsetX = 0;
+  let offsetY = 0;
+
+  // this part assigns the absolute value to the box so that it can be impacted by the left and top dragging logic 
+
+  box.style.position = 'absolute'; 
+
+  // this part is listening for the user to click the mouse down 
+    
+  box.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    offsetX = e.clientX - box.offsetLeft;
+    offsetY = e.clientY - box.offsetTop;
+
+  // this part changes the cursor to let the user know they're grabbing it 
+
+    box.style.cursor = 'grabbing';
+
+  });
+
+  // this part listens for the user's cursor movement 
+  // and sets the cursor to show the user it could (and def should) be grabbed 
+    
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+    box.style.cursor = 'grab';
+  });
+
+    // this part listens for the user to detect if they are grabbing it with their mouse down and moving it
+    // and if so, assigns the style left and style top values 
+    // then uses offset to record the cursor's relative position to keep the box with it 
+    
+  document.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+      box.style.left = `${e.clientX - offsetX}px`;
+      box.style.top = `${e.clientY - offsetY}px`;
+    }
+  });
+
+    // this part is the end of the script, thank you for coming to my ted talk 
+    
   </script>
 </body>
 </html>
