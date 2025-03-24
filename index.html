@@ -4,10 +4,32 @@
   <title>98.css example</title>
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="https://unpkg.com/98.css" />
+    <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;  /* centers horizontally */
+      align-items: center;      /* centers vertically */
+    }
+
+    .centered-box {
+      padding: 2rem;
+      background-color: #f0f0f0;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 
+
+  
 <body>
- <div class="window" style="width: 320px">
+ <div class="window" class="centered-box" style="width: 320px">
   <div class="title-bar">
     <div class="title-bar-text">From the Desk of Jane Kaiser</div>
   </div>
