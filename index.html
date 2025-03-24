@@ -23,6 +23,43 @@
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
+body {
+      margin: 0;
+      overflow: hidden;
+      background: #000;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 20px;
+    }
+
+    #addToaster {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    .toaster {
+      position: absolute;
+      top: 0;
+      left: -100px;
+      width: 80px;
+      height: 80px;
+      pointer-events: none;
+      animation: fly 10s linear infinite;
+    }
+
+    @keyframes fly {
+      0% {
+        transform: translateX(-100px) translateY(0);
+      }
+      100% {
+        transform: translateX(110vw) translateY(0);
+      }
+    }
+
+      
   </style>
 </head>
 
@@ -49,4 +86,27 @@
     <p class="status-bar-field"><a href="mailto:me@kaiserjane.com">Contact Me</a></p>
   </div>
 </div>
+    <br>
+<button class="button" id="addToaster">Add a Toaster</button>
+<br>
+  <script>
+    const maxToasters = 10;
+    let toasterCount = 0;
+
+    document.getElementById("addToaster").addEventListener("click", () => {
+      if (toasterCount >= maxToasters) return;
+
+      const toaster = document.createElement("img");
+      toaster.src = "https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif"; // Replace with your preferred flying toaster gif
+      toaster.classList.add("toaster");
+
+      const randomTop = Math.random() * (window.innerHeight - 100);
+      toaster.style.top = `${randomTop}px`;
+
+      document.body.appendChild(toaster);
+      toasterCount++;
+    });
+  </script>
 </body>
+</html>
+
