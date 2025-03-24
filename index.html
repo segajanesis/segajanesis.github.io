@@ -26,7 +26,6 @@
 body {
       margin: 0;
       overflow: hidden;
-      background: #000;
       color: white;
       font-family: sans-serif;
       text-align: center;
@@ -49,6 +48,14 @@ body {
       pointer-events: none;
       animation: fly 10s linear infinite;
     }
+@keyframes fly {
+  0% {
+    transform: translateX(-100px) translateY(0);
+  }
+  100% {
+    transform: translateX(110vw) translateY(-100vh);
+  }
+}
       
   </style>
 </head>
