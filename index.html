@@ -34,21 +34,22 @@
       cursor: pointer;
     }
 
-    .toaster {
-      position: absolute;
-      top: 0;
-      left: -100px;
-      width: 80px;
-      height: 80px;
-      pointer-events: none;
-      animation: fly 10s linear infinite;
-    }
-@keyframes fly {
+  .toaster {
+  position: absolute;
+  top: -100px;
+  left: 100vw;
+  width: 80px;
+  height: 80px;
+  pointer-events: none;
+  animation: fly-diagonal-down 10s linear forwards;
+}
+
+@keyframes fly-diagonal-down {
   0% {
-    transform: translateX(-100px) translateY(0);
+    transform: translateX(0) translateY(0);
   }
   100% {
-    transform: translateX(110vw) translateY(-100vh);
+    transform: translateX(-120vw) translateY(120vh);
   }
 }
       
