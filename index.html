@@ -7,66 +7,81 @@
   <link rel="stylesheet" href="https://unpkg.com/98.css" />
    
   <style>
-   html, body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-}
-
-body {  
-  background-image: url('https://raw.githubusercontent.com/segajanesis/segajanesis.github.io/refs/heads/main/98ss.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;  
-  align-items: center;
-  margin: 0;
-  overflow: hidden;
-  padding-top: 20px;
-}
-
-.centered-box {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  border: 2px solid #ccc;
-  border-radius: 1px;
-  cursor: grab;
-}
-
-#addToaster {
-  padding: 10px 20px;
-  font-size: 16px;
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-
-.toaster {
-  position: absolute;
-  top: -100px;
-  left: 100vw;
-  width: 80px;
-  height: 80px;
-  pointer-events: none;
-  animation: fly-diagonal-down 10s linear forwards;
-  z-index: 10;
-}
-
-/* this is making the toasters fly */
-@keyframes fly-diagonal-down {
-  0% {
-    transform: translateX(0) translateY(0);
+  html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
   }
-  100% {
-    transform: translateX(-120vw) translateY(120vh);
-  }
-}
 
-.button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  body {  
+    background-image: url('https://raw.githubusercontent.com/segajanesis/segajanesis.github.io/refs/heads/main/98ss.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    margin: 0;
+    overflow: hidden;
+    padding-top: 20px;
+  }
+
+  .centered-box {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 2px solid #ccc;
+    border-radius: 1px;
+    cursor: grab;
+  }
+
+  #addToaster {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+
+  .toaster {
+    position: absolute;
+    top: -100px;
+    left: 100vw;
+    width: 80px;
+    height: 80px;
+    pointer-events: none;
+    animation: fly-diagonal-down 10s linear forwards;
+    z-index: 10;
+  }
+
+  @keyframes fly-diagonal-down {
+    0% {
+      transform: translateX(0) translateY(0);
+    }
+    100% {
+      transform: translateX(-120vw) translateY(120vh);
+    }
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 🆕 Make all the key UI text elements larger */
+  .window-body,
+  .tree-view,
+  .status-bar,
+  .status-bar-field,
+  .button,
+  .title-bar-text {
+    font-size: 16px !important;
+  }
+
+  /* Optional: add better line spacing if needed */
+  .window-body p,
+  .tree-view li {
+    line-height: 1.4;
+  }
 </style>
 
 
