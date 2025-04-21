@@ -1,105 +1,80 @@
-<style>
-  html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    box-sizing: border-box;
-  }
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jane Kaiser '98</title>
+  <meta charset="UTF-8" />
 
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
+  <link rel="stylesheet" href="https://unpkg.com/98.css" />
 
-  body {
-    background-image: url('https://raw.githubusercontent.com/segajanesis/segajanesis.github.io/refs/heads/main/98ss.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    overflow: hidden;
-    padding-top: 20px;
-  }
-
-  .centered-box {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border: 2px solid #ccc;
-    border-radius: 1px;
-    cursor: grab;
-  }
-
-  .window-wide {
-    width: 400px;
-    max-width: 95vw;
-  }
-
-  #addToaster {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    cursor: pointer;
-  }
-
-  .toaster {
-    position: absolute;
-    top: -100px;
-    left: 100vw;
-    width: 80px;
-    height: 80px;
-    pointer-events: none;
-    animation: fly-diagonal-down 10s linear forwards;
-    z-index: 10;
-  }
-
-  @keyframes fly-diagonal-down {
-    0% {
-      transform: translateX(0) translateY(0);
+  <style>
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      box-sizing: border-box;
     }
-    100% {
-      transform: translateX(-120vw) translateY(120vh);
+
+    *, *:before, *:after {
+      box-sizing: inherit;
     }
-  }
 
-  .button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .window-body,
-  .tree-view,
-  .status-bar,
-  .status-bar-field,
-  .button,
-  .title-bar-text {
-    font-size: 16px !important;
-  }
-
-  .window-body p,
-  .tree-view li {
-    line-height: 1.4;
-  }
-
-  @media (max-width: 600px) {
     body {
-      display: block;
-      overflow-y: auto;
-      padding: 10px;
+      background-image: url('https://raw.githubusercontent.com/segajanesis/segajanesis.github.io/refs/heads/main/98ss.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      overflow: hidden;
+      padding-top: 20px;
     }
 
-    #draggable-box {
-      position: static !important;
-      width: 95vw !important;
-      margin: 20px auto;
-      cursor: default !important;
+    .centered-box {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border: 2px solid #ccc;
+      border-radius: 1px;
+      cursor: grab;
     }
 
     .window-wide {
-      width: 95vw !important;
-      max-width: 100vw;
+      width: 400px;
+      max-width: 95vw;
+    }
+
+    #addToaster {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    .toaster {
+      position: absolute;
+      top: -100px;
+      left: 100vw;
+      width: 80px;
+      height: 80px;
+      pointer-events: none;
+      animation: fly-diagonal-down 10s linear forwards;
+      z-index: 10;
+    }
+
+    @keyframes fly-diagonal-down {
+      0% {
+        transform: translateX(0) translateY(0);
+      }
+      100% {
+        transform: translateX(-120vw) translateY(120vh);
+      }
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .window-body,
@@ -107,3 +82,173 @@
     .status-bar,
     .status-bar-field,
     .button,
+    .title-bar-text {
+      font-size: 16px !important;
+    }
+
+    .window-body p,
+    .tree-view li {
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        display: block;
+        overflow-y: auto;
+        padding: 10px;
+      }
+
+      #draggable-box {
+        position: static !important;
+        width: 95vw !important;
+        margin: 20px auto;
+        cursor: default !important;
+      }
+
+      .window-wide {
+        width: 95vw !important;
+        max-width: 100vw;
+      }
+
+      .window-body,
+      .tree-view,
+      .status-bar,
+      .status-bar-field,
+      .button,
+      .title-bar-text {
+        font-size: 18px !important;
+      }
+
+      .window-body p,
+      .tree-view li {
+        line-height: 1.5;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="window centered-box window-wide" id="draggable-box">
+    <div class="title-bar">
+      <div class="title-bar-text">From the Desk of Jane Kaiser</div>
+    </div>
+    <div class="window-body">
+      <p>Hi, I'm Jane!<br><br>
+        Excited to join your team and help with:
+      </p>
+      <ul>
+        <li>Creating Knowledge Bases</li>
+        <li>Building & Scaling CX Programs</li>
+        <li>Finding Common Ground Across All Teams</li>
+      </ul>
+
+      <ul class="tree-view">
+        <li>Experience</li>
+        <li>15+ Years building cool things at:</li>
+
+        <li>
+          <details open>
+            <summary>Meta</summary>
+            <ul>
+              <li>Product Launch Engineer</li>
+            </ul>
+          </details>
+        </li>
+
+        <li>
+          <details open>
+            <summary>Disney</summary>
+            <ul>
+              <li>Sr. Product Engineer</li>
+            </ul>
+          </details>
+        </li>
+
+        <li>
+          <details open>
+            <summary>Shortcut</summary>
+            <ul>
+              <li>Support Engineer</li>
+            </ul>
+          </details>
+        </li>
+
+        <li>
+          <details open>
+            <summary>Scribd</summary>
+            <ul>
+              <li>Zendesk Administrator</li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+
+      <br>
+      <div class="button-container">
+        <button class="button" id="addToaster">Add a Toaster</button>
+      </div>
+      <br>
+
+      <div class="status-bar">
+        <p class="status-bar-field">View my full resume on <a href="https://www.linkedin.com/in/kaiserjane">LinkedIn</a></p>
+        <p class="status-bar-field">View my <a href="https://github.com/segajanesis">Github</a></p>
+        <p class="status-bar-field"><a href="mailto:me@kaiserjane.com">Contact Me</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const maxToasters = 20;
+    let toasterCount = 0;
+
+    document.getElementById("addToaster").addEventListener("click", () => {
+      if (toasterCount >= maxToasters) return;
+
+      const toaster = document.createElement("img");
+      toaster.src = "https://media0.giphy.com/media/1jkYrR51WFBCkHp1xZ/giphy.gif";
+      toaster.classList.add("toaster");
+      toaster.alt = "Flying toaster gif";
+
+      const randomTop = Math.random() * (window.innerHeight - 100);
+      toaster.style.top = `${randomTop}px`;
+
+      const shift = (Math.random() > 0.5 ? 1 : -1) * (Math.random() * window.innerHeight);
+      toaster.style.setProperty('--y-shift', `${shift}px`);
+
+      toaster.addEventListener("animationend", () => {
+        toaster.remove();
+        toasterCount--;
+      });
+
+      document.body.appendChild(toaster);
+      toasterCount++;
+    });
+
+    const box = document.getElementById('draggable-box');
+    let isDragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    box.style.position = 'absolute';
+
+    box.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      offsetX = e.clientX - box.offsetLeft;
+      offsetY = e.clientY - box.offsetTop;
+      box.style.cursor = 'grabbing';
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      box.style.cursor = 'grab';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging) {
+        box.style.left = `${e.clientX - offsetX}px`;
+        box.style.top = `${e.clientY - offsetY}px`;
+      }
+    });
+  </script>
+</body>
+</html>
