@@ -6,7 +6,7 @@
   
   <link rel="stylesheet" href="https://unpkg.com/98.css" />
    
-  <style>
+<style>
   html, body {
     height: 100%;
     width: 100%;
@@ -32,6 +32,10 @@
     border: 2px solid #ccc;
     border-radius: 1px;
     cursor: grab;
+  }
+
+  .window-wide {
+    width: 400px;
   }
 
   #addToaster {
@@ -67,7 +71,7 @@
     align-items: center;
   }
 
-  /* 🆕 Make all the key UI text elements larger */
+  /* This improves the font size around the 98.css default inherited value */
   .window-body,
   .tree-view,
   .status-bar,
@@ -77,13 +81,39 @@
     font-size: 16px !important;
   }
 
-  /* Optional: add better line spacing if needed */
   .window-body p,
   .tree-view li {
     line-height: 1.4;
   }
-</style>
 
+  /* This helps with mobile responsiveness */
+  @media (max-width: 600px) {
+    .window-wide {
+      width: 90vw !important;
+      max-width: 95vw;
+    }
+
+    .window-body,
+    .tree-view,
+    .status-bar,
+    .status-bar-field,
+    .button,
+    .title-bar-text {
+      font-size: 18px !important;
+    }
+
+    .window-body p,
+    .tree-view li {
+      line-height: 1.5;
+    }
+
+    /* This changes dragging behavior on mobile */
+    #draggable-box {
+      position: static !important;
+      cursor: default;
+    }
+  }
+</style>
 
   
 </head>
