@@ -26,10 +26,10 @@
       min-height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       margin: 0;
-      overflow: hidden;
-      padding-top: 20px;
+      overflow: auto;
+      padding: 40px 0 30px;
       font-family: "MS Sans Serif", "Microsoft Sans Serif", Arial, sans-serif;
       font-size: 15px;
       line-height: 1.35;
@@ -69,8 +69,9 @@
     }
 
     .window-wide {
-      width: 500px;
+      width: min(620px, 80vw);
       max-width: 95vw;
+      max-height: 78vh;
     }
 
     .window-body {
@@ -98,6 +99,20 @@
       padding-left: 18px;
     }
 
+    .tree-view li {
+      margin: 2px 0;
+    }
+
+    .tree-view details {
+      margin: 0;
+    }
+
+    .tree-view ul {
+      margin-top: 4px;
+      margin-bottom: 4px;
+      padding-left: 18px;
+    }
+
     details summary {
       cursor: pointer;
       font-weight: 600;
@@ -121,7 +136,7 @@
     #addToaster {
       padding: 10px 20px;
       font-size: 15px;
-      margin-bottom: 20px;
+      margin-bottom: 14px;
       cursor: pointer;
       min-width: 140px;
     }
@@ -199,7 +214,8 @@
       <div class="title-bar-text">From the Desk of Jane Kaiser</div>
     </div>
     <div class="window-body">
-      <p>Hi, I'm Jane!<br><br>
+      <p>Hi, I'm Jane! Want to work together? I'd love to hear from you.</p>
+      <p>
         I'd love to help you with:
       </p>
       <ul>
