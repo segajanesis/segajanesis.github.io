@@ -3,6 +3,7 @@
 <head>
   <title>Jane Kaiser '98</title>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="https://unpkg.com/98.css" />
 
@@ -157,6 +158,7 @@
       margin: 8px auto 0;
       cursor: pointer;
       min-width: 140px;
+      touch-action: manipulation;
     }
 
     .toaster {
@@ -200,17 +202,21 @@
       body {
         display: block;
         overflow-y: auto;
-        padding: 10px;
+        padding: 10px 8px 24px;
       }
 
       #draggable-box {
         width: 100% !important;
-        margin: 20px auto;
+        margin: 10px auto;
       }
 
       .window-wide {
         width: 100% !important;
         max-width: 100%;
+      }
+
+      .window-body {
+        padding: 14px 12px 12px;
       }
 
       .window-body,
@@ -219,7 +225,31 @@
       .status-bar-field,
       .button,
       .title-bar-text {
-        font-size: 18px !important;
+        font-size: 16px !important;
+      }
+
+      .title-bar {
+        min-height: 30px;
+        padding: 5px 8px;
+      }
+
+      .intro-list {
+        padding-left: 22px;
+      }
+
+      .tree-view {
+        padding-left: 14px;
+      }
+
+      .tree-view ul {
+        padding-left: 14px;
+      }
+
+      #addToaster {
+        width: 100%;
+        min-height: 48px;
+        margin-top: 12px;
+        font-size: 17px !important;
       }
     }
   </style>
@@ -300,7 +330,7 @@
       </ul>
 
       <div class="button-container">
-        <button class="button" id="addToaster">Add a Toaster</button>
+        <button class="button" id="addToaster" type="button" aria-label="Launch a toaster">🍞 Launch a Toaster!</button>
       </div>
 
       <div class="status-bar">
@@ -322,7 +352,7 @@
       toaster.classList.add("toaster");
       toaster.alt = "Flying toaster gif";
 
-      const randomTop = Math.random() * (window.innerHeight - 100);
+      const randomTop = Math.random() * Math.max(window.innerHeight - 100, 0);
       toaster.style.top = `${randomTop}px`;
 
       toaster.addEventListener("animationend", () => {
