@@ -64,7 +64,6 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       border: 2px solid #ccc;
       border-radius: 1px;
-      cursor: grab;
     }
 
     .window-wide {
@@ -207,7 +206,6 @@
       #draggable-box {
         width: 100% !important;
         margin: 20px auto;
-        cursor: default !important;
       }
 
       .window-wide {
@@ -335,32 +333,6 @@
 
       document.body.appendChild(toaster);
       toasterCount++;
-    });
-
-    const box = document.getElementById('draggable-box');
-    let isDragging = false;
-    let offsetX = 0;
-    let offsetY = 0;
-
-    box.style.position = 'relative';
-
-    box.addEventListener('mousedown', (e) => {
-      isDragging = true;
-      offsetX = e.clientX - box.offsetLeft;
-      offsetY = e.clientY - box.offsetTop;
-      box.style.cursor = 'grabbing';
-    });
-
-    document.addEventListener('mouseup', () => {
-      isDragging = false;
-      box.style.cursor = 'grab';
-    });
-
-    document.addEventListener('mousemove', (e) => {
-      if (isDragging) {
-        box.style.left = `${e.clientX - offsetX}px`;
-        box.style.top = `${e.clientY - offsetY}px`;
-      }
     });
   </script>
 </body>
