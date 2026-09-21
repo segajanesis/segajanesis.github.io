@@ -32,7 +32,11 @@
       padding-top: 20px;
       font-family: "MS Sans Serif", "Microsoft Sans Serif", Arial, sans-serif;
       font-size: 16px;
+      line-height: 1.5;
+      letter-spacing: 0.1px;
       color: #000;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     .centered-box {
@@ -47,11 +51,39 @@
       max-width: 95vw;
     }
 
+    .window-body {
+      padding: 12px 14px 10px;
+    }
+
+    .window-body p,
+    .window-body li,
+    .status-bar-field,
+    .title-bar-text,
+    .tree-view li,
+    .button {
+      line-height: 1.5;
+    }
+
+    ul {
+      margin-top: 8px;
+      margin-bottom: 12px;
+      padding-left: 24px;
+    }
+
+    details summary {
+      cursor: pointer;
+    }
+
+    a {
+      color: #0000ee;
+    }
+
     #addToaster {
       padding: 10px 20px;
       font-size: 16px;
       margin-bottom: 20px;
       cursor: pointer;
+      min-width: 140px;
     }
 
     .toaster {
@@ -90,11 +122,6 @@
       font-size: 16px !important;
     }
 
-    .window-body p,
-    .tree-view li {
-      line-height: 1.4;
-    }
-
     @media (max-width: 600px) {
       body {
         display: block;
@@ -122,11 +149,6 @@
       .title-bar-text {
         font-size: 18px !important;
       }
-
-      .window-body p,
-      .tree-view li {
-        line-height: 1.5;
-      }
     }
   </style>
 </head>
@@ -149,7 +171,7 @@
       <ul class="tree-view">
         <li>10+ years building cool things at:</li>
 
-           <li>
+        <li>
           <details open>
             <summary>Etsy</summary>
             <ul>
