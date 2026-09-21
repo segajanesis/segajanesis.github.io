@@ -39,6 +39,28 @@
       text-rendering: optimizeLegibility;
     }
 
+    .window {
+      background: #f0f0f0;
+      border: 2px solid #1d1d1d;
+      box-shadow: 3px 3px 0 #000;
+    }
+
+    .title-bar {
+      background: linear-gradient(90deg, #0a4eaa 0%, #3f8ef3 100%);
+      border-bottom: 2px solid #0a0a0a;
+      padding: 3px 8px;
+      min-height: 24px;
+      display: flex;
+      align-items: center;
+    }
+
+    .title-bar-text {
+      color: #fff !important;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+    }
+
     .centered-box {
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       border: 2px solid #ccc;
@@ -53,6 +75,7 @@
 
     .window-body {
       padding: 12px 14px 10px;
+      background: #f0f0f0;
     }
 
     .window-body p,
@@ -70,8 +93,25 @@
       padding-left: 24px;
     }
 
+    .tree-view {
+      margin-left: 0;
+      padding-left: 18px;
+    }
+
     details summary {
       cursor: pointer;
+      font-weight: 600;
+    }
+
+    .status-bar {
+      border-top: 2px solid #d0d0d0;
+      background: #d9d9d9;
+      padding: 8px 10px 0;
+      margin-top: 8px;
+    }
+
+    .status-bar-field {
+      margin: 0 0 6px;
     }
 
     a {
